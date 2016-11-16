@@ -8,14 +8,16 @@ This project aimed to build a simple chat application with ASP.NET Core. It was 
 
 ## Setup
 
-See [setup.md](./setup.md)
+For environment setup see [setup.md](./setup.md)
 
-Run `dotnet restore` in order to restore packages.
+Run `dotnet restore` in order to restore packages. `dotnet run` runs the application.
 
 ## Release plan
 
 - 0.1.0
+  - setup mysql database
   - can write to and read from the database
+  - realtime chat works
 - 0.2.0
   - can remove and update messages
 
@@ -27,7 +29,8 @@ Run `dotnet restore` in order to restore packages.
 
 ## Work time tracking
 
-| Task | Time (h) |
-| :---: | :---: |
-| Setup and documentation | 10 |
-| Planning | 0 |
+| Date | Task | Time (h) |
+| :---: | :---: | :---: |
+| | Setup and documentation | 10 |
+| | Planning | 2 |
+| 16.11.2016 | Gather information. Initialize web server. | 3 |
