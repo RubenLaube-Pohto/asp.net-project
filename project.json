@@ -1,5 +1,8 @@
 {
-  "version": "1.0.0-*",
+  "name": "SimpleChatProject",
+  "version": "0.0.0-*",
+  "description": "This is a simple chat application made as an end of course project.",
+  "copyright": "Ruben Laube-Pohto 2016",
   "buildOptions": {
     "debugType": "portable",
     "emitEntryPoint": true
@@ -11,7 +14,8 @@
         "Microsoft.NETCore.App": {
           "type": "platform",
           "version": "1.0.1"
-        }
+        },
+        "Microsoft.AspNetCore.Server.Kestrel": "1.1.0"
       },
       "imports": "dnxcore50"
     }
