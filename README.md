@@ -42,3 +42,4 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 | | Setup and documentation | 10 |
 | | Planning | 2 |
 | 16.11.2016 | Gather information. Initialize web server. | 3 |
+| 28.11.2016 | Implement MVC | 4 |
