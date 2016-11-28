@@ -1,12 +1,23 @@
-@model ChatApp.Models.Message
+@model IEnumerable<ChatApp.Models.Message>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moi</title>
+    <title>ChatApp</title>
 </head>
 <body>
-    <h1>Hello from view!</h1>
-    <p>@Model.Author sanoi: @Model.Text @Model.Timestamp</p>
+    <table>
+        @foreach (var msg in Model)
+        {
+            <tr>
+                <td class="author">@msg.Author</td>
+                <td class="text">@msg.Text</td>
+                <td class="timestamp">@msg.Timestamp</td>
+            </tr>
+        }
+    </table>
+    <input id="txtAuthor" type="text" placeholder="Author">
+    <input id="txtMessage" type="text" placeholder="Message">
+    <input type="button" onclick="SendMessage()" value="Send">
 </body>
 </html>
