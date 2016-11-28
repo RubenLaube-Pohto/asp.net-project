@@ -5,7 +5,8 @@
   "copyright": "Ruben Laube-Pohto 2016",
   "buildOptions": {
     "debugType": "portable",
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true // enable razor views to compile at runtime
   },
   "dependencies": {},
   "tools": {

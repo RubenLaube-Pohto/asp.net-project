@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Hosting;
 
-namespace aspnetcoreapp
+namespace ChatApp
 {
     public class Program
     {
@@ -10,6 +10,7 @@ namespace aspnetcoreapp
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseStartup<Startup>() // <Startup> tells to look for Startup class in Startup.cs
+                .UseContentRoot(System.IO.Directory.GetCurrentDirectory())
                 .Build();
 
             host.Run();
