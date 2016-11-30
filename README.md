@@ -43,3 +43,8 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 | | Planning | 2 |
 | 16.11.2016 | Gather information. Initialize web server. | 3 |
 | 28.11.2016 | Implement MVC | 4 |
+| 30.11.2016 | Work on implementing EntityFramework | 1.5 |
+
+## Sources
+
+[Setting up EntityFramework with MySQL](http://insidemysql.com/howto-starting-with-mysql-ef-core-provider-and-connectornet-7-0-4/)
