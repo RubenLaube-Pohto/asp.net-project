@@ -25,6 +25,7 @@
         "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
         "Microsoft.AspNetCore.SignalR": "0.0.1-alpha",
         "Microsoft.AspNetCore.Mvc": "1.1.0",
+        "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.0", // For making razor forms
         "Microsoft.Extensions.Configuration": "1.1.0",
         "Microsoft.Extensions.Configuration.Json": "1.1.0",
         // Official MySql connection package didn't work for me, used Pomelo instead.

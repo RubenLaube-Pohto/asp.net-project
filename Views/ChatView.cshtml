@@ -1,4 +1,6 @@
-@model IEnumerable<ChatApp.Models.Message>
+@model ChatApp.Controllers.ChatMessagesViewModel
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@using ChatApp.Models
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +9,7 @@
 </head>
 <body>
     <table>
-        @foreach (var msg in Model)
+        @foreach (Message msg in Model.OldMessages)
         {
             <tr>
                 <td class="author">@msg.Author</td>
@@ -17,8 +19,10 @@
         }
     </table>
     <!-- TODO: Form for posting new messages -->
-    <input id="txtAuthor" type="text" placeholder="Author">
-    <input id="txtMessage" type="text" placeholder="Message">
-    <input type="button" onclick="SendMessage()" value="Send">
+    <form asp-action="SendNewMessage" method="post">
+        <input asp-for="NewMessage.Author"/>
+        <input asp-for="NewMessage.Text"/>
+        <input type="submit" value="Send"/>
+    </form>
 </body>
 </html>
