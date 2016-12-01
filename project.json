@@ -5,11 +5,11 @@
   "copyright": "Ruben Laube-Pohto 2016",
   "buildOptions": {
     "copyToOutput": {
-      "include": "appsettings.json" // add file to be available after build
+      "include": "appsettings.json"
     },
     "debugType": "portable",
     "emitEntryPoint": true,
-    "preserveCompilationContext": true // enable razor views to compile at runtime
+    "preserveCompilationContext": true
   },
   "dependencies": {},
   "tools": {
@@ -25,10 +25,9 @@
         "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
         "Microsoft.AspNetCore.SignalR": "0.0.1-alpha",
         "Microsoft.AspNetCore.Mvc": "1.1.0",
-        "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.0", // For making razor forms
+        "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.0",
         "Microsoft.Extensions.Configuration": "1.1.0",
         "Microsoft.Extensions.Configuration.Json": "1.1.0",
-        // Official MySql connection package didn't work for me, used Pomelo instead.
         "Pomelo.EntityFrameworkCore.MySql": "1.1.0"
       },
       "imports": "dnxcore50"

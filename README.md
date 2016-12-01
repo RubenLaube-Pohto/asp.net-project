@@ -28,11 +28,15 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 - 0.2.0
   - realtime chat works
 
-## Problems during development
+## Problems during development and other notes
 
 - No idea how to proceed
 - New tools
 - Fighting with Razor forms. Not very intuitive and hard to find good documentation.
+- `appsettings.json` is mainly used to hold the connection information of a MySQL database. The file is copied to output so it is available for use.
+- `preserveCompilationContext` is set to `true` in order to have Razor views compiled at runtime.
+- Tag helpers are used to have the server generate proper Razor forms.
+- `EntityFramework` needed a MySQL connection driver. There was an official one available but I could not get it to work. I used another driver from Pomelo instead.
 
 ## Afterthoughts
 
