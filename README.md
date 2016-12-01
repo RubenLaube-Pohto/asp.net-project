@@ -32,6 +32,7 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 
 - No idea how to proceed
 - New tools
+- Fighting with Razor forms. Not very intuitive and hard to find good documentation.
 
 ## Afterthoughts
 
@@ -44,6 +45,7 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 | 16.11.2016 | Gather information. Initialize web server. | 3 |
 | 28.11.2016 | Implement MVC | 4 |
 | 30.11.2016 | Implement EntityFramework | 3 |
+| 01.12.2016 | Work on Razor forms and implement basic create | 6 |
 
 ## Sources
 
