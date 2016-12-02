@@ -1,7 +1,7 @@
+using ChatApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using ChatApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,7 @@ namespace ChatApp.Controllers
 {
     public class ChatController : Controller
     {
+        // Main action. Returns the main chat view.
         [HttpGet]
         [Route("/chat")]
         public IActionResult Chat()
@@ -27,6 +28,8 @@ namespace ChatApp.Controllers
             return View("~/Views/ChatView.cshtml", messages);
         }
 
+        // Saves a new message to the database
+        // TODO: Add some error management and inform user of errors
         [HttpPost]
         [Route("/chat")]
         [ValidateAntiForgeryToken] // Prevents cross-site request forgery
@@ -38,6 +41,7 @@ namespace ChatApp.Controllers
             }
             catch (Exception e) { }
 
+            // Validate input
             if (ModelState.IsValid)
             {
                 using (var context = GetContext())
@@ -53,9 +57,9 @@ namespace ChatApp.Controllers
         }
 
         /*
-         * Using GET.
+         * Delete a message by id from the database
          *
-         * I would like to have this as DELETE or at least POST
+         * Currently using GET. I would like to have this as DELETE or at least POST
          * but I can't get it to work in the current time frame.
          */
         // TODO: Implemet as POST or DELETE
@@ -71,6 +75,7 @@ namespace ChatApp.Controllers
             return RedirectToAction("Chat");
         }
 
+        // Get all messages from the database
         protected List<Message> GetMessages()
         {
             using (var context = GetContext())
@@ -79,6 +84,7 @@ namespace ChatApp.Controllers
             }
         }
 
+        // Get database context
         protected MessagesContext GetContext()
         {
             var builder = new ConfigurationBuilder()
@@ -90,8 +96,10 @@ namespace ChatApp.Controllers
         }
     }
 
-    // As only one type can be passed to the view, it is helpfull to
-    // have a helper class for holding more than one type.
+    /*
+     * As only one type can be passed to the view, it is helpfull to
+     * have a helper class for holding more than one type.
+     */
     public class ChatMessagesViewModel
     {
         public IEnumerable<Message> OldMessages { get; set; }

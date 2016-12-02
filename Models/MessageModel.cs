@@ -27,7 +27,7 @@ namespace ChatApp.Models
         }
     }
 
-    // TODO: Add some controls on datatype with regards to databse.
+    // Message model
     public class Message
     {
         [Key]

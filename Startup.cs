@@ -15,7 +15,7 @@ namespace ChatApp
         }
         public void Configure(IApplicationBuilder app)
         {
-            app.UseSession();
+            app.UseSession(); // Needs to be before MVC for some reason
             app.UseMvc();
             app.Run(context =>
             {
