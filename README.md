@@ -24,7 +24,8 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 
 - 0.1.0
   - setup mysql database
-  - basic crud of messages
+  - ~~basic crud of messages~~
+  - basic create and delete is enough
 - 0.2.0
   - realtime chat works
 
@@ -50,6 +51,7 @@ Run `dotnet restore` in order to restore packages. `dotnet run` runs the applica
 | 28.11.2016 | Implement MVC | 4 |
 | 30.11.2016 | Implement EntityFramework | 3 |
 | 01.12.2016 | Work on Razor forms and implement basic create | 6 |
+| 02.12.2016 | Update UI, implement basic delete | 6 |
 
 ## Sources
 
