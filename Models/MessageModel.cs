@@ -32,10 +32,12 @@ namespace ChatApp.Models
     {
         [Key]
         public int Id { get; set; }
-        [RequiredAttribute]
+        [Required]
+        [MaxLength(20)]
         public string Author { get; set; }
-        [RequiredAttribute]
+        [Required]
         public string Text { get; set; }
+        [Required]
         public DateTime Timestamp { get; set; }
 
         public Message()
