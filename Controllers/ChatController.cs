@@ -52,6 +52,25 @@ namespace ChatApp.Controllers
             return RedirectToAction("Chat");
         }
 
+        /*
+         * Using GET.
+         *
+         * I would like to have this as DELETE or at least POST
+         * but I can't get it to work in the current time frame.
+         */
+        // TODO: Implemet as POST or DELETE
+        [Route("/chat/{id}")]
+        public IActionResult DeleteMessage(int id)
+        {
+            using (var context = GetContext())
+            {
+                Message message = context.Messages.Where(m => m.Id == id).SingleOrDefault();
+                context.Messages.Remove(message);
+                context.SaveChanges();
+            }
+            return RedirectToAction("Chat");
+        }
+
         protected List<Message> GetMessages()
         {
             using (var context = GetContext())

@@ -7,7 +7,8 @@
 <head>
     <title>ChatApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" async>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById("txtMessage").focus()
@@ -22,11 +23,13 @@
                 <td name="author" class="w3-right-align" style="width: 10em;">@msg.Author:</td>
                 <td name="text">@msg.Text</td>
                 <td name="timestamp" class="w3-right-align">@msg.Timestamp</td>
+                <td><a asp-action="DeleteMessage" asp-route-id="@msg.Id" class="material-icons">close</a></td>
             </tr>
         }
     </table>
     <form asp-action="SendNewMessage" method="post" class="w3-row">
         <input asp-for="NewMessage.Author" class="w3-input w3-border w3-col m2" placeholder="Name"/>
+        <span asp-validation-for="NewMessage.Author"></span>
         <input id="txtMessage" asp-for="NewMessage.Text" class="w3-input w3-border w3-col m8" placeholder="Message"/>
         <input type="submit" value="Send" class="w3-btn w3-blue w3-col w3-large m2"/>
     </form>
