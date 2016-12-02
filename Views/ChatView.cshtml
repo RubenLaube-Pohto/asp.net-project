@@ -6,22 +6,24 @@
 <html>
 <head>
     <title>ChatApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" async>
 </head>
 <body>
-    <table>
+    <table class="w3-table w3-striped">
         @foreach (Message msg in Model.OldMessages)
         {
             <tr>
-                <td class="author">@msg.Author</td>
-                <td class="text">@msg.Text</td>
-                <td class="timestamp">@msg.Timestamp</td>
+                <td name="author" class="w3-right-align" style="width: 10em;">@msg.Author:</td>
+                <td name="text">@msg.Text</td>
+                <td name="timestamp" class="w3-right-align">@msg.Timestamp</td>
             </tr>
         }
     </table>
-    <form asp-action="SendNewMessage" method="post">
-        <input asp-for="NewMessage.Author"/>
-        <input asp-for="NewMessage.Text"/>
-        <input type="submit" value="Send"/>
+    <form asp-action="SendNewMessage" method="post" class="w3-row">
+        <input asp-for="NewMessage.Author" class="w3-input w3-border w3-col m2" placeholder="Name"/>
+        <input asp-for="NewMessage.Text" class="w3-input w3-border w3-col m8" placeholder="Message"/>
+        <input type="submit" value="Send" class="w3-btn w3-blue w3-col w3-large m2"/>
     </form>
 </body>
 </html>
