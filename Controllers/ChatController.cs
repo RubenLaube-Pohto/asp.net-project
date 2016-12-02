@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using ChatApp.Models;
 using System;
@@ -16,6 +17,13 @@ namespace ChatApp.Controllers
             ChatMessagesViewModel messages = new ChatMessagesViewModel();
             messages.OldMessages = GetMessages();
             messages.NewMessage = new Message();
+
+            try
+            {
+                messages.NewMessage.Author = HttpContext.Session.GetString("authorName");
+            }
+            catch (Exception e) { }
+
             return View("~/Views/ChatView.cshtml", messages);
         }
 
@@ -24,6 +32,12 @@ namespace ChatApp.Controllers
         [ValidateAntiForgeryToken] // Prevents cross-site request forgery
         public IActionResult SendNewMessage(ChatMessagesViewModel model)
         {
+            try
+            {
+                HttpContext.Session.SetString("authorName", model.NewMessage.Author);
+            }
+            catch (Exception e) { }
+
             if (ModelState.IsValid)
             {
                 using (var context = GetContext())

@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,9 +10,12 @@ namespace ChatApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
         public void Configure(IApplicationBuilder app)
         {
+            app.UseSession();
             app.UseMvc();
             app.Run(context =>
             {
