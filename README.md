@@ -16,6 +16,11 @@ The MySQL database required was just installed locally. Only configuration neede
 
 For just running the application the simplest way is to use Docker Compose.
 
+## Docker Images
+
+- [mysql](https://hub.docker.com/_/mysql/)
+- [rubenlaubepohto/chatapp](https://hub.docker.com/r/rubenlaubepohto/chatapp/)
+
 ## Design Notes
 
 - Will try to use SignalR
@@ -26,11 +31,11 @@ For just running the application the simplest way is to use Docker Compose.
 
 ## Release plan
 
-- 0.1.0
+- 0.1.0 :+1:
   - setup mysql database
   - ~~basic crud of messages~~
   - basic create and delete is enough
-- 0.2.0
+- 0.2.0 :+1:
   - realtime chat works
 
 ## Problems during development and other notes
