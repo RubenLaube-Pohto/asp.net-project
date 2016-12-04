@@ -11,6 +11,9 @@
     "emitEntryPoint": true,
     "preserveCompilationContext": true
   },
+  "publishOptions": {
+    "include": ["appsettings.json", "Views"]
+  },
   "dependencies": {
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.AspNetCore.SignalR.Server": "0.2.0-*",
