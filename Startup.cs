@@ -12,11 +12,16 @@ namespace ChatApp
             services.AddMvc();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddSignalR(options =>
+            {
+                options.Hubs.EnableDetailedErrors = true;
+            });
         }
         public void Configure(IApplicationBuilder app)
         {
             app.UseSession(); // Needs to be before MVC for some reason
             app.UseMvc();
+            app.UseSignalR();
             app.Run(context =>
             {
                 return context.Response.WriteAsync("Hello from ASP.NET Core!");
