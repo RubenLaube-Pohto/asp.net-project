@@ -1,5 +1,7 @@
 # Chat client with ASP.NET
 
+[TEMP DEMO](http://188.166.7.52/chat)
+
 ## Introduction
 
 This project aimed to build a simple chat application with ASP.NET Core. It was to use a simple MySQL database in order to save old messages and then provide basic crud operations for manipulating the data. Development was planned to be done on an installation of Ubuntu 16.04 with Visual Code. .NET Core version was 1.0.1.
